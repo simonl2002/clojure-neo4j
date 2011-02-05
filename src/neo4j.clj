@@ -259,3 +259,12 @@
 	      (new-props-evaluator propmap)
 	      {relkey outgoing}))
 
+(defn node-index 
+    "returns a node index"
+    ([name] (.forNodes (.index *neo*) name))
+    ([name config] (.forNodes (.index *neo*) name config)))
+
+(defn relationship-index
+    "returns an relationship index"
+    ([name] (.forRelationships (.index *neo*) name))
+    ([name config] (.forRelationships (.index *neo*) name config)))
